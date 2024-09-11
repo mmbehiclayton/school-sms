@@ -18,14 +18,14 @@ class ClassesSeeder extends Seeder
     {
         Classes::factory()
             ->count(10)
-            ->sequence(fn($sequence) => ['name' => 'Class ' . $sequence->index + 1])
+            ->sequence(fn($sequence) => ['name' => 'Grade ' . $sequence->index + 1])
             ->has(
                 Section::factory()
                     ->count(2)
                     ->state(
                         new Sequence(
-                            ['name' => 'Section A'],
-                            ['name' => 'Section B'],
+                            ['name' => 'Blue'],
+                            ['name' => 'Green'],
                         )
                     )
                     ->has(
