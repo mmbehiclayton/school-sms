@@ -29,6 +29,8 @@ class StudentResource extends Resource
 
     protected static ?string $navigationGroup = "Academic Management";
 
+    protected static ?string $modelLabel = 'Learner';
+
     public static function getNavigationBadge(): ?string
     {
         return static::$model::count();
@@ -42,7 +44,7 @@ class StudentResource extends Resource
                     ->live()
                     ->relationship(name: 'class', titleAttribute: 'name'),
                 Select::make('section_id')
-                    ->label('Section')
+                    ->label('Stream')
                     ->options(function (Get $get) {
                         $classId = $get('class_id');
 
@@ -88,7 +90,7 @@ class StudentResource extends Resource
                                 Classes::pluck('name', 'id')->toArray(),
                             ),
                         Select::make('section_id')
-                            ->label('Filter By Section')
+                            ->label('Filter By Stream')
                             ->placeholder('Select a Section')
                             ->options(function (Get $get) {
                                 $classId = $get('class_id');

@@ -26,6 +26,8 @@ class SectionResource extends Resource
 
     protected static ?string $navigationGroup = "Academic Management";
 
+    protected static ?string $modelLabel = 'Stream';
+
     public static function form(Form $form): Form
     {
         return $form

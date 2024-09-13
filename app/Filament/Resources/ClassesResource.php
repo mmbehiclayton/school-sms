@@ -20,6 +20,8 @@ class ClassesResource extends Resource
 
     protected static ?string $navigationGroup = "Academic Management";
 
+    protected static ?string $modelLabel = 'Classes in Session';
+
     public static function form(Form $form): Form
     {
         return $form
